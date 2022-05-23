@@ -18,7 +18,8 @@ DB_USERNAME=root
 DB_PASSWORD=root
 
 Cuarto
-generar una clave, para crear la nueva e insertarla automátciamente en el .env: php artisan key:generate
+generar una clave, para crear la nueva e insertarla automátciamente en el .env:
+php artisan key:generate
 
 Quinto
 ejecutar las migraciones: php artisan migrate
