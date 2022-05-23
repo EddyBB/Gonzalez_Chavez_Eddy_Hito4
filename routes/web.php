@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Auth::routes();
+Auth::routes();
 
 Route::resource('users', App\Http\Controllers\UserController::class);
 Route::resource('cruceros', App\Http\Controllers\CruceroController::class);
