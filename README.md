@@ -1,4 +1,6 @@
 # -Gonzalez_Chavez_Eddy_Hito4
+Ir a directorio raíz del proyecto y seguir los pasos
+
 Primero
 composer install
 
