@@ -65,9 +65,9 @@
 											<td>{{ $crucero->img_crucero }}</td>
 
                                             <td>
-                                                <form action="{{ route('cruceros.destroy',$crucero->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('cruceros.show',$crucero->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('cruceros.edit',$crucero->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                <form action="{{ route('cruceros.destroy',$crucero->id_crucero) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('cruceros.show',$crucero->id_crucero) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('cruceros.edit',$crucero->id_crucero) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>

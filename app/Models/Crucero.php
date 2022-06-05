@@ -39,7 +39,7 @@ class Crucero extends Model
 		'precio' => 'required',
 		'img_crucero' => 'required',
     ];
-
+    protected $primaryKey = "id_crucero";
     protected $perPage = 20;
 
     /**
