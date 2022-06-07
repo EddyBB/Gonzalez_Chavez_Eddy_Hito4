@@ -29,7 +29,7 @@ class Actividade extends Model
 		'horario_actividad' => 'required',
 		'descripcion' => 'required',
     ];
-
+    protected $primaryKey = "id_actividades";
     protected $perPage = 20;
 
     /**

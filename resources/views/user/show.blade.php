@@ -1,20 +1,20 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('template_title')
     {{ $user->name ?? 'Show User' }}
 @endsection
 
 @section('content')
-    <section class="content container-fluid">
+    <section class="content container-fluid my-3">
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Show User</span>
+                            <span class="card-title">Ver Usuario</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('users.index') }}"> Back</a>
+                            <a class="btn btn-primary" href="{{ route('users.index') }}"> Atrás</a>
                         </div>
                     </div>
 
@@ -37,11 +37,11 @@
                             {{ $user->dni }}
                         </div>
                         <div class="form-group">
-                            <strong>Fechanaci:</strong>
+                            <strong>FechaNaci:</strong>
                             {{ $user->fechaNaci }}
                         </div>
                         <div class="form-group">
-                            <strong>Numtlf:</strong>
+                            <strong>NumTlf:</strong>
                             {{ $user->numTlf }}
                         </div>
 

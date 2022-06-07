@@ -32,7 +32,7 @@ class Reserva extends Model
 		'personas' => 'required',
 		'precio_final' => 'required',
     ];
-
+    protected $primaryKey = "id_reserva";
     protected $perPage = 20;
 
     /**

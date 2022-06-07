@@ -25,12 +25,13 @@ Route::resource('tripulacion', App\Http\Controllers\TripulacionController::class
 Route::resource('reservas', App\Http\Controllers\ReservaController::class);
 Route::resource('actividades', App\Http\Controllers\ActividadeController::class);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+/*Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');*/
 
 
 Route::get('/home',function(){
     return view('index');
 });
+
 
 /*Route::get('/about',function(){
     return view('about');

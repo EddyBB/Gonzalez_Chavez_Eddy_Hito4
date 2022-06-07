@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('template_title')
     Create User
 @endsection
 
 @section('content')
-    <section class="content container-fluid">
+    <section class="content container-fluid my-3">
         <div class="row">
             <div class="col-md-12">
 

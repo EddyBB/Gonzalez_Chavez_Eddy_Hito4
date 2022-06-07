@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('template_title')
     {{ $reserva->name ?? 'Show Reserva' }}
@@ -11,10 +11,10 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Show Reserva</span>
+                            <span class="card-title">Ver Reserva</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('reservas.index') }}"> Back</a>
+                            <a class="btn btn-primary" href="{{ route('reservas.index') }}"> Atrás</a>
                         </div>
                     </div>
 

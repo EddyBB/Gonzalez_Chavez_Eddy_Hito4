@@ -1,20 +1,20 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('template_title')
     {{ $crucero->name ?? 'Show Crucero' }}
 @endsection
 
 @section('content')
-    <section class="content container-fluid">
+    <section class="content container-fluid my-3">
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Show Crucero</span>
+                            <span class="card-title">Ver Crucero</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('cruceros.index') }}"> Back</a>
+                            <a class="btn btn-primary" href="{{ route('cruceros.index') }}"> Atrás</a>
                         </div>
                     </div>
 

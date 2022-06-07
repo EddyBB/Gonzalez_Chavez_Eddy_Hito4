@@ -48,7 +48,7 @@ class CruceroController extends Controller
         $crucero = Crucero::create($request->all());
 
         return redirect()->route('cruceros.index')
-            ->with('success', 'Crucero created successfully.');
+            ->with('success', 'El Crucero se ha creado correctamente');
     }
 
     /**
@@ -91,7 +91,7 @@ class CruceroController extends Controller
         $crucero->update($request->all());
 
         return redirect()->route('cruceros.index')
-            ->with('success', 'Crucero updated successfully');
+            ->with('success', 'El Crucero se ha actualizado correctamente');
     }
 
     /**
@@ -104,6 +104,6 @@ class CruceroController extends Controller
         $crucero = Crucero::find($id)->delete();
 
         return redirect()->route('cruceros.index')
-            ->with('success', 'Crucero deleted successfully');
+            ->with('success', 'El Crucero se ha borrado');
     }
 }

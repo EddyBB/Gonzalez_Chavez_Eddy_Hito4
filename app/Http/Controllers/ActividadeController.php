@@ -48,7 +48,7 @@ class ActividadeController extends Controller
         $actividade = Actividade::create($request->all());
 
         return redirect()->route('actividades.index')
-            ->with('success', 'Actividade created successfully.');
+            ->with('success', 'La actividad se creo correctamente');
     }
 
     /**
@@ -91,7 +91,7 @@ class ActividadeController extends Controller
         $actividade->update($request->all());
 
         return redirect()->route('actividades.index')
-            ->with('success', 'Actividade updated successfully');
+            ->with('success', 'La actividad se ha actualizado');
     }
 
     /**
@@ -104,6 +104,6 @@ class ActividadeController extends Controller
         $actividade = Actividade::find($id)->delete();
 
         return redirect()->route('actividades.index')
-            ->with('success', 'Actividade deleted successfully');
+            ->with('success', 'La actividad se ha borrado');
     }
 }
