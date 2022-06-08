@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('template_title')
     Update Tripulacion
@@ -13,10 +13,10 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Update Tripulacion</span>
+                        <span class="card-title">Editar tripulante</span>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('tripulacions.update', $tripulacion->id) }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('tripulacion.update', $tripulacion->id_tripulante) }}"  role="form" enctype="multipart/form-data">
                             {{ method_field('PATCH') }}
                             @csrf
 

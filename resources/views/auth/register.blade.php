@@ -43,7 +43,7 @@
                             <label for="fechaNaci" class="col-md-4 col-form-label text-md-end">{{ __('Fecha de nacimiento') }}</label>
 
                             <div class="col-md-6">
-                                <input id="fechaNaci" type="text" class="form-control @error('fechaNaci') is-invalid @enderror" name="fechaNaci" value="{{ old('fechaNaci') }}" required autocomplete="fechaNaci" autofocus>
+                                <input id="fechaNaci" type="text" class="form-control @error('fechaNaci') is-invalid @enderror" name="fechaNaci" value="{{ old('fechaNaci') }}" required autocomplete="fechaNaci" autofocus placeholder="YYYY/MM/DD">
 
                                 @error('fechaNaci')
                                 <span class="invalid-feedback" role="alert">

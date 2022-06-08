@@ -28,7 +28,8 @@ class Tripulacion extends Model
 		'id_crucero' => 'required',
 		'funcion' => 'required',
     ];
-
+    protected $table = 'tripulacion';
+    protected $primaryKey = "id_tripulante";
     protected $perPage = 20;
 
     /**

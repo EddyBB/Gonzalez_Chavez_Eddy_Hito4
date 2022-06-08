@@ -94,5 +94,32 @@ class users extends Seeder
             "fechaNaci" => "1980/02/05",
             "numTlf" => 987456258
         ]);
+
+        DB::table("users")->insert([
+            "name" => "Javi",
+            "email" => "javi@gmail.com",
+            "password" => Hash::make("administrador"),
+            "dni" => "25815975X",
+            "fechaNaci" => "1900/12/21",
+            "numTlf" => 987654321
+        ]);
+
+        DB::table("users")->insert([
+            "name" => "Marta",
+            "email" => "marta@gmail.com",
+            "password" => Hash::make("administrador"),
+            "dni" => "12121212H",
+            "fechaNaci" => "1999/01/01",
+            "numTlf" => 987654321
+        ]);
+
+        DB::table("users")->insert([
+            "name" => "Antonio",
+            "email" => "antonio@gmail.com",
+            "password" => Hash::make("administrador"),
+            "dni" => "32659821T",
+            "fechaNaci" => "2000/05/15",
+            "numTlf" => 784512369
+        ]);
     }
 }

@@ -31,6 +31,10 @@
                     </li>
 
                     <li class="nav-item">
+                        <a class="nav-link" href="{{ route('tripulacion.index')}}">{{__('Tripulacion') }}</a>
+                    </li>
+
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ route('reservas.index')}}">{{__('Reservas') }}</a>
                     </li>
 

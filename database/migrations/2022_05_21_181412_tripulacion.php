@@ -35,6 +35,6 @@ class Tripulacion extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('tripulacion');
     }
 }

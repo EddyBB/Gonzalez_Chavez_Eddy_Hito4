@@ -18,10 +18,10 @@ class TripulacionController extends Controller
      */
     public function index()
     {
-        $tripulacions = Tripulacion::paginate();
+        $tripulacion = Tripulacion::paginate();
 
-        return view('tripulacion.index', compact('tripulacions'))
-            ->with('i', (request()->input('page', 1) - 1) * $tripulacions->perPage());
+        return view('tripulacion.index', compact('tripulacion'))
+            ->with('i', (request()->input('page', 1) - 1) * $tripulacion->perPage());
     }
 
     /**
@@ -47,8 +47,8 @@ class TripulacionController extends Controller
 
         $tripulacion = Tripulacion::create($request->all());
 
-        return redirect()->route('tripulacions.index')
-            ->with('success', 'Tripulacion created successfully.');
+        return redirect()->route('tripulacion.index')
+            ->with('success', 'Tripulante creado correctamente');
     }
 
     /**
@@ -90,8 +90,8 @@ class TripulacionController extends Controller
 
         $tripulacion->update($request->all());
 
-        return redirect()->route('tripulacions.index')
-            ->with('success', 'Tripulacion updated successfully');
+        return redirect()->route('tripulacion.index')
+            ->with('success', 'Tripulante editado correctamente');
     }
 
     /**
@@ -103,7 +103,7 @@ class TripulacionController extends Controller
     {
         $tripulacion = Tripulacion::find($id)->delete();
 
-        return redirect()->route('tripulacions.index')
-            ->with('success', 'Tripulacion deleted successfully');
+        return redirect()->route('tripulacion.index')
+            ->with('success', 'Tripulante borrado');
     }
 }

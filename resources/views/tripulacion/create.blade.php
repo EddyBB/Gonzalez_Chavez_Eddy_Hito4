@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('template_title')
     Create Tripulacion
@@ -13,10 +13,10 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Create Tripulacion</span>
+                        <span class="card-title">Crear tripulante</span>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('tripulacions.store') }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('tripulacion.store') }}"  role="form" enctype="multipart/form-data">
                             @csrf
 
                             @include('tripulacion.form')

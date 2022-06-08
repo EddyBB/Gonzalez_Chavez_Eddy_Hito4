@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('template_title')
     Tripulacion
@@ -17,8 +17,8 @@
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('tripulacions.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
+                                <a href="{{ route('tripulacion.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                  {{ __('Crear Nuevo') }}
                                 </a>
                               </div>
                         </div>
@@ -45,22 +45,22 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($tripulacions as $tripulacion)
+                                    @foreach ($tripulacion as $tripulante)
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $tripulacion->id_tripulante }}</td>
-											<td>{{ $tripulacion->id_usuario }}</td>
-											<td>{{ $tripulacion->id_crucero }}</td>
-											<td>{{ $tripulacion->funcion }}</td>
+											<td>{{ $tripulante->id_tripulante }}</td>
+											<td>{{ $tripulante->id_usuario }}</td>
+											<td>{{ $tripulante->id_crucero }}</td>
+											<td>{{ $tripulante->funcion }}</td>
 
                                             <td>
-                                                <form action="{{ route('tripulacions.destroy',$tripulacion->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('tripulacions.show',$tripulacion->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('tripulacions.edit',$tripulacion->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                <form action="{{ route('tripulacion.destroy',$tripulante->id_tripulante) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('tripulacion.show',$tripulante->id_tripulante) }}"><i class="fa fa-fw fa-eye"></i> Ver</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('tripulacion.edit',$tripulante->id_tripulante) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Borrar</button>
                                                 </form>
                                             </td>
                                         </tr>
@@ -70,7 +70,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $tripulacions->links() !!}
+                {!! $tripulacion->links() !!}
             </div>
         </div>
     </div>

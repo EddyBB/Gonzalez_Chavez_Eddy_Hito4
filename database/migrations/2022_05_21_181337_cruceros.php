@@ -36,6 +36,6 @@ class Cruceros extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('cruceros');
     }
 }

@@ -33,6 +33,6 @@ class Actividades extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('actividades');
     }
 }
