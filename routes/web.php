@@ -29,7 +29,7 @@ Route::resource('actividades', App\Http\Controllers\ActividadeController::class)
 
 
 Route::get('/home',function(){
-    return view('index');
+    return view('dashboard');
 });
 
 
