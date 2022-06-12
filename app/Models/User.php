@@ -10,9 +10,19 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
-    protected $primaryKey = 'id_usuario';
+    
     use HasApiTokens, HasFactory, Notifiable;
 
+    static $rules = [
+        'name' => 'required',
+        'email' => 'required',
+        'dni' => 'required',
+        'fechaNaci' => 'required',
+        'numTlf' => 'required',
+        'password' => 'required',
+    ];
+
+    protected $primaryKey = 'id_usuario';
     /**
      * The attributes that are mass assignable.
      *
@@ -45,4 +55,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function setPasswordAttribute($password)
+    {   
+       $this->attributes['password'] = bcrypt($password);
+    }
 }

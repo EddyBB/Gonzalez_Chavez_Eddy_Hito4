@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 /**
  * Class UserController
@@ -11,6 +12,7 @@ use Illuminate\Http\Request;
  */
 class UserController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -25,6 +27,24 @@ class UserController extends Controller
     }
 
     /**
+     * Get a validator for an incoming registration request.
+     *
+     * @param  array  $data
+     * @return \Illuminate\Contracts\Validation\Validator
+     */
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'dni' => ['required', 'string', 'min:9'],
+            'fechaNaci' => ['required', 'date'],
+            'numTlf' => ['required', 'integer', 'min:9'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+    }
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -33,6 +53,7 @@ class UserController extends Controller
     {
         $user = new User();
         return view('user.create', compact('user'));
+
     }
 
     /**
@@ -45,7 +66,15 @@ class UserController extends Controller
     {
         request()->validate(User::$rules);
 
-        $user = User::create($request->all());
+        //$user = User::create($request->all());
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'dni' => $request->dni,
+            'fechaNaci' => $request->fechaNaci,
+            'numTlf' => $request->numTlf,
+            'password' => $request-> password,
+        ]);
 
         return redirect()->route('users.index')
             ->with('success', 'Usuario creado.');
