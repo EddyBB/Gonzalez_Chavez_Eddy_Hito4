@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,13 +26,14 @@ Route::resource('tripulacion', App\Http\Controllers\TripulacionController::class
 Route::resource('reservas', App\Http\Controllers\ReservaController::class);
 Route::resource('actividades', App\Http\Controllers\ActividadeController::class);
 
-/*Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');*/
+Route::get('user/profile/{id}', 'App\Http\Controllers\UserProfileController@profile')->name('user.profile');
 
+
+/*Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');*/
 
 Route::get('/home',function(){
     return view('dashboard');
 });
-
 
 /*Route::get('/about',function(){
     return view('about');

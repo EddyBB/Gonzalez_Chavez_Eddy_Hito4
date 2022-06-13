@@ -13,6 +13,16 @@ use Illuminate\Support\Facades\Validator;
 class UserController extends Controller
 {
 
+        /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -53,7 +63,6 @@ class UserController extends Controller
     {
         $user = new User();
         return view('user.create', compact('user'));
-
     }
 
     /**
@@ -73,7 +82,7 @@ class UserController extends Controller
             'dni' => $request->dni,
             'fechaNaci' => $request->fechaNaci,
             'numTlf' => $request->numTlf,
-            'password' => $request-> password,
+            'password' => $request->password,
         ]);
 
         return redirect()->route('users.index')
