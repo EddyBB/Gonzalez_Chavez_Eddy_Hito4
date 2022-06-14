@@ -26,13 +26,14 @@ class UserProfileController extends Controller
      * @param  User $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
-    {
+    public function update(Request $request, $id)
+    {   
         request()->validate(User::$rules);
+
+        $user = User::find($id);
 
         $user->update($request->all());
 
-        return redirect()->route('users.index')
-            ->with('success', 'Usuario editado correctamente');
+        return view('user.profile', compact('user') );
     }
 }

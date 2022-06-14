@@ -99,10 +99,10 @@
     <div class="container-fluid py-4">
         <div class="card">
             <div class="card-header pb-0 px-3">
-                <h6 class="mb-0">{{ __('Profile Information') }}</h6>
+                <h6 class="mb-0">{{ __('Perfil de usuario') }}</h6>
             </div>
             <div class="card-body pt-4 p-3">
-                <form action="/user-profile" method="POST" role="form text-left">
+                <form action="{{ route('user.update', auth()->user()->id_usuario) }}" method="POST" role="form text-left">
                     @csrf
                     @if($errors->any())
                     <div class="mt-3  alert alert-primary alert-dismissible fade show" role="alert">
@@ -125,7 +125,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="user-name" class="form-control-label">{{ __('Full Name') }}</label>
+                                <label for="user-name" class="form-control-label">{{ __('Nombre') }}</label>
                                 <div class="@error('user.name')border border-danger rounded-3 @enderror">
                                     <input class="form-control" value="{{ auth()->user()->name }}" type="text" placeholder="Name" id="user-name" name="name">
                                     @error('name')
@@ -149,10 +149,10 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="user.phone" class="form-control-label">{{ __('Phone') }}</label>
-                                <div class="@error('user.phone')border border-danger rounded-3 @enderror">
-                                    <input class="form-control" type="tel" placeholder="40770888444" id="number" name="phone" value="{{ auth()->user()->phone }}">
-                                    @error('phone')
+                                <label for="user.numTlf" class="form-control-label">{{ __('Número de teléfono') }}</label>
+                                <div class="@error('user.numTlf')border border-danger rounded-3 @enderror">
+                                    <input class="form-control" type="tel" placeholder="40770888444" id="number" name="numTlf" value="{{ auth()->user()->numTlf }}">
+                                    @error('numTlf')
                                     <p class="text-danger text-xs mt-2">{{ $message }}</p>
                                     @enderror
                                 </div>
@@ -160,19 +160,38 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="user.location" class="form-control-label">{{ __('Location') }}</label>
-                                <div class="@error('user.location') border border-danger rounded-3 @enderror">
-                                    <input class="form-control" type="text" placeholder="Location" id="name" name="location" value="{{ auth()->user()->location }}">
+                                <label for="user.dni" class="form-control-label">{{ __('DNI') }}</label>
+                                <div class="@error('user.dni') border border-danger rounded-3 @enderror">
+                                    <input class="form-control" type="text" placeholder="DNI" id="name" name="dni" value="{{ auth()->user()->dni }}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="user.fechaNaci" class="form-control-label">{{ __('Fecha de Nacimiento') }}</label>
+                                <div class="@error('user.fechaNaci') border border-danger rounded-3 @enderror">
+                                    <input class="form-control" type="text" placeholder="Fecha de Nacimiento" name="fechaNaci" value="{{ auth()->user()->fechaNaci }}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="user.password" class="form-control-label">{{ __('Contraseña') }}</label>
+                                <div class="@error('user.password')border border-danger rounded-3 @enderror">
+                                    <input class="form-control" type="tel" placeholder="contraseña" name="password" value="{{ auth()->user()->password }}">
+                                    @error('password')
+                                    <p class="text-danger text-xs mt-2">{{ $message }}</p>
+                                    @enderror
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="about">{{ 'About Me' }}</label>
                         <div class="@error('user.about')border border-danger rounded-3 @enderror">
                             <textarea class="form-control" id="about" rows="3" placeholder="Say something about yourself" name="about_me">{{ auth()->user()->about_me }}</textarea>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="d-flex justify-content-end">
                         <button type="submit" class="btn bg-gradient-dark btn-md mt-4 mb-4">{{ 'Save Changes' }}</button>
                     </div>
