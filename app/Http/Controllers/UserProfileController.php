@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class UserProfileController extends Controller
 {
@@ -28,11 +29,22 @@ class UserProfileController extends Controller
      */
     public function update(Request $request, $id)
     {   
-        request()->validate(User::$rules);
+        request()->validate(User::$rulesProfile);
+
 
         $user = User::find($id);
 
-        $user->update($request->all());
+        $user->name = $request-> name;
+        $user->email = $request->email;
+        $user->dni = $request-> dni;
+        $user->fechaNaci = $request-> fechaNaci;
+        $user->numTlf = $request-> numTlf;
+       
+        if(!empty($request->password)){
+            $user->password = $request->password;
+        }
+
+        $user->save();
 
         return view('user.profile', compact('user') );
     }

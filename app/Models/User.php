@@ -19,7 +19,16 @@ class User extends Authenticatable
         'dni' => 'required',
         'fechaNaci' => 'required',
         'numTlf' => 'required',
-        'password' => 'required',
+        'password' => 'sometimes|required',
+    ];
+
+    static $rulesProfile = [
+        'name' => 'required',
+        'email' => 'required',
+        'dni' => 'required',
+        'fechaNaci' => 'required',
+        'numTlf' => 'required',
+        'password' => '',
     ];
 
     protected $primaryKey = 'id_usuario';

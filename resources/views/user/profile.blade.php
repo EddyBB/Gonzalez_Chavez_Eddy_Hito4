@@ -178,7 +178,7 @@
                             <div class="form-group">
                                 <label for="user.password" class="form-control-label">{{ __('Contraseña') }}</label>
                                 <div class="@error('user.password')border border-danger rounded-3 @enderror">
-                                    <input class="form-control" type="tel" placeholder="contraseña" name="password" value="{{ auth()->user()->password }}">
+                                    <input class="form-control" type="tel" placeholder="contraseña" name="password">
                                     @error('password')
                                     <p class="text-danger text-xs mt-2">{{ $message }}</p>
                                     @enderror
