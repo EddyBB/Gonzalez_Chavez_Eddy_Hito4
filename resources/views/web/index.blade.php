@@ -19,15 +19,15 @@
                 <div class="carousel-inner">
 
                     <div class="carousel-item active">
-                        <img src="images/header/captura_el_momento_desktop2_tcm93-138911.jpg" class="d-block w-100" alt="...">
+                        <img src="{{ asset('img/armonia.jpg') }}" class="d-block w-100" alt="...">
                     </div>
 
                     <div class="carousel-item">
-                        <img src="images/header/HSC-SUMMER-2021-MALAGA_tcm93-138847.jpg" class="d-block w-100" alt="...">
+                        <img src="{{ asset('img/lirica.jpg') }}" class="d-block w-100" alt="...">
                     </div>
 
                     <div class="carousel-item">
-                        <img src="images/header/HSC-WINTER-ESP-EMIRATES_tcm93-138837.jpg" class="d-block w-100" alt="...">
+                        <img src="{{ asset('img/seaside.jpg') }}" class="d-block w-100" alt="...">
                     </div>
 
                 </div>
@@ -55,9 +55,10 @@
         </div>
     </div>
 
-    @foreach($crucero as $cru)
+
     <!-- Content Row-->
     <div class="row gx-4 gx-lg-5">
+        @foreach($crucero as $cru)
         <div class="col-md-4 mb-5">
             <div class="card h-100">
                 <div class="card-body text-center">
@@ -69,7 +70,8 @@
                 </div>
             </div>
         </div>
+        @endforeach
     </div>
-    @endforeach
+
 </div>
 @endsection
