@@ -106,4 +106,12 @@ class CruceroController extends Controller
         return redirect()->route('cruceros.index')
             ->with('success', 'El Crucero se ha borrado');
     }
+
+    //Parte pública
+    public function ofertas()
+    {
+        $crucero = Crucero::all();
+
+        return view("web.index", ["crucero" => $crucero]);
+    }
 }

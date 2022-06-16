@@ -26,9 +26,12 @@ Route::resource('tripulacion', App\Http\Controllers\TripulacionController::class
 Route::resource('reservas', App\Http\Controllers\ReservaController::class);
 Route::resource('actividades', App\Http\Controllers\ActividadeController::class);
 
+//Perfil administrador
 Route::get('user/profile/{id}', 'App\Http\Controllers\UserProfileController@profile')->name('user.profile');
 Route::post('user/profile/{id}', 'App\Http\Controllers\UserProfileController@update')->name('user.update');
 
+//Parte publica
+Route::get('/ofertas', 'App\Http\Controllers\CruceroController@ofertas')->name('web.index');
 
 /*Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');*/
 
