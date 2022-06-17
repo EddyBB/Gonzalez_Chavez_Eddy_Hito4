@@ -24,9 +24,7 @@
             <a href="/ofertas"><img class="float-start" src="../../img/header/crucero.png" title="Ideal Cruceros" alt="" style="width:40px;height:40px;"></a>
             <a class="navbar-brand" href="/ofertas">Ideal Cruceros</a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
@@ -36,12 +34,41 @@
                     <li class="nav-item"><a class="nav-link" href="#!">Hoteles</a></li>
                     <li class="nav-item"><a class="nav-link" href="#!" target="_blank">Blog</a></li>
                 </ul>
+                <ul class="navbar-nav ms-auto">
+                    @guest
+                    @if (Route::has('login'))
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                    </li>
+                    @endif
 
-                <form class="d-flex" action="" method="post">
-                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
-                    <button class="btn btn-outline-success" type="submit">Búsqueda</button>
-                </form>
+                    @if (Route::has('register'))
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                    </li>
+                    @endif
+                    @else
+                    <li class="nav-item dropdown ">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            {{ Auth::user()->name }}
+                        </a>
 
+                        <div class="dropdown-menu dropdown-menu-end navbar-dark bg-dark" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item text-white" href="#">
+                                {{__('Perfil') }}
+                            </a>
+                            <a class="dropdown-item text-white" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </div>
+                    </li>
+                    @endguest
+                </ul>
             </div>
 
         </div>
@@ -54,16 +81,13 @@
         <div class="container px-4 px-lg-5">
             <section class="mb-4 text-center">
                 <!-- Facebook -->
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
-                        class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
 
                 <!-- Twitter -->
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
-                        class="fab fa-twitter"></i></a>
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
 
                 <!-- Instagram -->
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
-                        class="fab fa-instagram"></i></a>
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
             </section>
             <!-- Section: Social media -->
 
@@ -84,7 +108,7 @@
                         <div class="col-md-5 col-12">
                             <!-- Email input -->
                             <div class="form-outline form-white mb-4">
-                                <input type="email" id="form5Example21" class="form-control" placeholder="email"/>
+                                <input type="email" id="form5Example21" class="form-control" placeholder="email" />
                             </div>
                         </div>
                         <!--Grid column-->

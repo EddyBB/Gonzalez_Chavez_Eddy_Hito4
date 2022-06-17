@@ -31,7 +31,7 @@ class cruceros extends Seeder
             "fecha_fin" => "2022/02/7",
             "puerto_origen" => "Pireo/Grecia",
             "puerto_fin" => "Pireo/Grecia",
-            "descripcion" => "¿Cansado de estar en casa? ¿Te apetece salir y disfrutar del verano a tope? Embárcate en nuestro CRUCERO MUÉVETE!, un crucero con actividades llenas de energía y diversión como zumba, clases de salsa, karaoke, fiestas temáticas y mucho, mucho más. Un crucero con Excursiones Opcionales en Español y Guía Asistente. ¡No dejes pasar esta oportunidad y vente a disfrutar del verano con nosotros!",
+            "descripcion" => "¿Cansado de estar en casa? ¿Te apetece salir y disfrutar del verano a tope? Embárcate en nuestro CRUCERO MUÉVETE!, un crucero con actividades llenas de energía y diversión como zumba, clases de salsa, karaoke, fiestas temáticas y mucho, mucho más.",
             "precio" => 669,
             "img_crucero" => "lirica.jpg"
         ]);
