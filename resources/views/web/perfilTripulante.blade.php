@@ -79,7 +79,7 @@
     <div class="container-fluid py-4">
         <div class="card">
             <div class="card-header pb-0 px-3">
-                <h6 class="mb-0">{{ __('Perfil de usuario') }}</h6>
+                <h6 class="mb-0">{{ __('Perfil de Tripulante') }}</h6>
             </div>
             <div class="card-body pt-4 p-3">
                 <form action="{{ route('user.update', auth()->user()->id_usuario) }}" method="POST" role="form text-left">
