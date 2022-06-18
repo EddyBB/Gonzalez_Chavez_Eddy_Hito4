@@ -2,11 +2,6 @@
     <div class="box-body">
 
         <div class="form-group">
-            {{ Form::label('id_usuario') }}
-            {{ Form::text('id_usuario', $user->id_usuario, ['class' => 'form-control' . ($errors->has('id_usuario') ? ' is-invalid' : ''), 'placeholder' => 'Id Usuario']) }}
-            {!! $errors->first('id_usuario', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
-        <div class="form-group">
             {{ Form::label('name') }}
             {{ Form::text('name', $user->name, ['class' => 'form-control' . ($errors->has('name') ? ' is-invalid' : ''), 'placeholder' => 'Name']) }}
             {!! $errors->first('name', '<div class="invalid-feedback">:message</div>') !!}
@@ -36,6 +31,13 @@
             {{ Form::label('password') }}
             {{ Form::text('password', $user->password, ['class' => 'form-control' . ($errors->has('password') ? ' is-invalid' : ''), 'placeholder' => 'password']) }}
             {!! $errors->first('password', '<div class="invalid-feedback">:message</div>') !!}
+        </div>
+
+        <div class="form-group py-2">
+            {{ Form::label('rol') }}
+            {{--{{ Form::text('rol', $user->rol, ['class' => 'form-control' . ($errors->has('rol') ? ' is-invalid' : ''), 'placeholder' => 'rol']) }}--}}
+            {{ Form::select('rol', [ 'admin' => 'admin', 'tripulante' => 'tripulante' ], null, ['class' => 'form-control col-md-8' . ($errors->has('rol') ? ' is-invalid' : ''), 'placeholder' => 'Selecciona un rol']) }}
+            {!! $errors->first('rol', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 
     </div>

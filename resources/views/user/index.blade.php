@@ -42,6 +42,7 @@
 										<th>Dni</th>
 										<th>FechaNaci</th>
 										<th>NumTlf</th>
+                                        <th>rol</th>
 
                                         <th></th>
                                     </tr>
@@ -57,6 +58,7 @@
 											<td>{{ $user->dni }}</td>
 											<td>{{ $user->fechaNaci }}</td>
 											<td>{{ $user->numTlf }}</td>
+                                            <td>{{ $user->rol }}</td>
 
                                             <td>
                                                 <form action="{{ route('users.destroy',$user->id_usuario) }}" method="POST">

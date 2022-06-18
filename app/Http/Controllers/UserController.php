@@ -83,6 +83,7 @@ class UserController extends Controller
             'fechaNaci' => $request->fechaNaci,
             'numTlf' => $request->numTlf,
             'password' => $request->password,
+            'rol' => $request->rol,
         ]);
 
         return redirect()->route('users.index')

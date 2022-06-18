@@ -66,7 +66,7 @@
                     <h2 class="card-title">{{$cru->nombre}}</h2>
                     <p class="card-text">{{$cru->descripcion}}</p>
                 </div>
-                <div class="card-footer text-center"><a class="btn btn-primary btn-sm" href="#">Reserva ahora</a>
+                <div class="card-footer text-center"><a class="btn btn-primary btn-sm" href="{{$cru->id_crucero}}">Reserva ahora</a>
                 </div>
             </div>
         </div>

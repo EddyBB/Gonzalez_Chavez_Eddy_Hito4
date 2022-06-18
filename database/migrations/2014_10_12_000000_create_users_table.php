@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('dni')->length(9);
             $table->date('fechaNaci');
             $table->integer('numTlf')->length(9);
+            $table->string('rol')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
