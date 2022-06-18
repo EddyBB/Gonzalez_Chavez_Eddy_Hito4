@@ -29,7 +29,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="/ofertas">Ofertas</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Ofertas</a></li>
                     <li class="nav-item"><a class="nav-link" href="#!">Destinos</a></li>
                     <li class="nav-item"><a class="nav-link" href="#!">Hoteles</a></li>
                     <li class="nav-item"><a class="nav-link" href="#!" target="_blank">Blog</a></li>
