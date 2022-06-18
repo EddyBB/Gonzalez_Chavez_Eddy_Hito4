@@ -14,9 +14,12 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('auth.login');
-});
+/*Route::get('/', function () {
+    return view('web.index');
+});*/
+
+//Página principal, usuarios no logados.
+Route::get('/', 'App\Http\Controllers\CruceroController@ofertas')->name('web.index');
 
 Auth::routes();
 
@@ -32,14 +35,14 @@ Route::post('user/profile/{id}', 'App\Http\Controllers\UserProfileController@upd
 
 //Perfil usuario
 Route::get('perfilUsuario/{id}', 'App\Http\Controllers\UserProfileController@profileUser')->name('web.perfilUsuario');
-Route::post('perfilUsuario/{id}', 'App\Http\Controllers\UserProfileController@update')->name('user.update');
+Route::post('perfilUsuario/{id}', 'App\Http\Controllers\UserProfileController@updateUser')->name('user.updateUser');
 
 //Perfil Tripulante acceder nada mas loguear
 Route::get('perfilTripulante/{id}', 'App\Http\Controllers\UserProfileController@profileTripulante')->name('web.perfilTripulante');
-Route::post('perfilTripulante/{id}', 'App\Http\Controllers\UserProfileController@update')->name('user.update');
+Route::post('perfilTripulante/{id}', 'App\Http\Controllers\UserProfileController@updateTripulante')->name('user.updateTripulante');
 
 //Parte publica
-Route::get('/ofertas', 'App\Http\Controllers\CruceroController@ofertas')->name('web.index');
+//Route::get('/ofertas', 'App\Http\Controllers\CruceroController@ofertas')->name('web.index');
 
 /*Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');*/
 
