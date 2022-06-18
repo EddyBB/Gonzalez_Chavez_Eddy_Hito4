@@ -21,8 +21,8 @@
 
         <div class="container px-5">
 
-            <a href="/ofertas"><img class="float-start" src="../../img/header/crucero.png" title="Ideal Cruceros" alt="" style="width:40px;height:40px;"></a>
-            <a class="navbar-brand" href="/ofertas">Ideal Cruceros</a>
+            <a href="/"><img class="float-start" src="../../img/header/crucero.png" title="Ideal Cruceros" alt="" style="width:40px;height:40px;"></a>
+            <a class="navbar-brand" href="/">Ideal Cruceros</a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
 
