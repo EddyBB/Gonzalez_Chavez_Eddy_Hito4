@@ -27,13 +27,6 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="/ofertas">Ofertas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#!">Destinos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#!">Hoteles</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#!" target="_blank">Blog</a></li>
-                </ul>
                 <ul class="navbar-nav ms-auto">
                     @guest
                     @if (Route::has('login'))
@@ -54,7 +47,7 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-end navbar-dark bg-dark" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item text-white" href="{{ route('web.perfilUsuario',auth()->user()->id_usuario) }}">
+                            <a class="dropdown-item text-white" href="{{ route('web.perfilTripulante',auth()->user()->id_usuario) }}">
                                 {{__('Perfil') }}
                             </a>
                             <a class="dropdown-item text-white" href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -79,42 +72,6 @@
     <!-- Footer-->
     <footer class="py-5 bg-dark mt-auto">
         <div class="container px-4 px-lg-5">
-
-            <!-- Section: Form -->
-            <section class="">
-                <form action="">
-                    <!--Grid row-->
-                    <div class="row d-flex justify-content-center">
-                        <!--Grid column-->
-                        <div class="col-auto">
-                            <p class="pt-2">
-                                <strong class="text-white">Subscribete a nuestro boletín de ofertas</strong>
-                            </p>
-                        </div>
-                        <!--Grid column-->
-
-                        <!--Grid column-->
-                        <div class="col-md-5 col-12">
-                            <!-- Email input -->
-                            <div class="form-outline form-white mb-4">
-                                <input type="email" id="form5Example21" class="form-control" placeholder="email" />
-                            </div>
-                        </div>
-                        <!--Grid column-->
-
-                        <!--Grid column-->
-                        <div class="col-auto">
-                            <!-- Submit button -->
-                            <button type="submit" class="btn btn-outline-light mb-4">
-                                Subscribete
-                            </button>
-                        </div>
-                        <!--Grid column-->
-                    </div>
-                    <!--Grid row-->
-                </form>
-            </section>
-
             <p class="m-0 text-center text-white">Copyright &copy; Ideal Cruceros 2022</p>
         </div>
     </footer>

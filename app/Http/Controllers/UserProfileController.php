@@ -20,6 +20,18 @@ class UserProfileController extends Controller
         return view('user.profile', compact('user') );
     }
 
+    public function profileUser($id)
+    {
+        $user = User::find($id);
+        return view('web.perfilUsuario', compact('user') );
+    }
+
+    public function profileTripulante($id)
+    {
+        $user = User::find($id);
+        return view('web.perfilTripulante', compact('user') );
+    }
+
         /**
      * Update the specified resource in storage.
      *

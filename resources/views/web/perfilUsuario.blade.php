@@ -1,7 +1,7 @@
-@extends('layouts.master')
+@extends('layouts.public_nav')
 
 @section('template_title')
-    {{ $user->name ?? 'User Profile' }}
+    {{ $user->name ?? 'Perfil de usuario' }}
 @endsection
 
 @section('content')
@@ -27,7 +27,7 @@
                             {{ $user->name }}
                         </h5>
                         <p class="mb-0 font-weight-bold text-sm">
-                            {{ __(' Perfil / Administrador') }}
+                            {{ __(' Perfil / Usuario') }}
                         </p>
                     </div>
                 </div>
@@ -49,13 +49,13 @@
                                             </g>
                                         </g>
                                     </svg>
-                                    <span class="ms-1">{{ __('Incidencias') }}</span>
+                                    <span class="ms-1">{{ __('Reservas') }}</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link mb-0 px-0 py-1 " data-bs-toggle="tab" href="javascript:;" role="tab" aria-controls="teams" aria-selected="false">
                                     <svg class="text-dark" width="16px" height="16px" viewBox="0 0 40 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                        <title>Tareas</title>
+                                        <title>document</title>
                                         <g id="Basic-Elements" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                             <g id="Rounded-Icons" transform="translate(-1870.000000, -591.000000)" fill="#FFFFFF" fill-rule="nonzero">
                                                 <g id="Icons-with-opacity" transform="translate(1716.000000, 291.000000)">
@@ -79,7 +79,7 @@
     <div class="container-fluid py-4">
         <div class="card">
             <div class="card-header pb-0 px-3">
-                <h6 class="mb-0">{{ __('Perfil de usuario administrador') }}</h6>
+                <h6 class="mb-0">{{ __('Perfil de usuario') }}</h6>
             </div>
             <div class="card-body pt-4 p-3">
                 <form action="{{ route('user.update', auth()->user()->id_usuario) }}" method="POST" role="form text-left">

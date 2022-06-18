@@ -30,6 +30,14 @@ Route::resource('actividades', App\Http\Controllers\ActividadeController::class)
 Route::get('user/profile/{id}', 'App\Http\Controllers\UserProfileController@profile')->name('user.profile');
 Route::post('user/profile/{id}', 'App\Http\Controllers\UserProfileController@update')->name('user.update');
 
+//Perfil usuario
+Route::get('perfilUsuario/{id}', 'App\Http\Controllers\UserProfileController@profileUser')->name('web.perfilUsuario');
+Route::post('perfilUsuario/{id}', 'App\Http\Controllers\UserProfileController@update')->name('user.update');
+
+//Perfil Tripulante acceder nada mas loguear
+Route::get('perfilTripulante/{id}', 'App\Http\Controllers\UserProfileController@profileTripulante')->name('web.perfilTripulante');
+Route::post('perfilTripulante/{id}', 'App\Http\Controllers\UserProfileController@update')->name('user.update');
+
 //Parte publica
 Route::get('/ofertas', 'App\Http\Controllers\CruceroController@ofertas')->name('web.index');
 
