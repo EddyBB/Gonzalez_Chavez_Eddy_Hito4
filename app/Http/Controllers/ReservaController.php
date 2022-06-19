@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Reserva;
 use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\DB;
 
 /**
  * Class ReservaController
@@ -22,6 +24,15 @@ class ReservaController extends Controller
 
         return view('reserva.index', compact('reservas'))
             ->with('i', (request()->input('page', 1) - 1) * $reservas->perPage());
+    }
+
+    public function indexReserva($id)
+
+    {
+        $reservas = DB::table("reservas")
+        ->select('id_reserva','id_usuario','id_crucero','fecha_reserva','personas','precio_final')
+        ->where('id_usuario', '=', $id)->get();
+        return view('web.reservas', compact('reservas'));
     }
 
     /**
@@ -64,6 +75,13 @@ class ReservaController extends Controller
         return view('reserva.show', compact('reserva'));
     }
 
+    public function reservaShow($id)
+    {
+        $reserva = Reserva::find($id);
+
+        return view('web.reservaShow', compact('reserva'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -104,6 +122,14 @@ class ReservaController extends Controller
         $reserva = Reserva::find($id)->delete();
 
         return redirect()->route('reservas.index')
+            ->with('success', 'Reserva eliminada');
+    }
+
+    public function deleteReserva($id)
+    {
+        $reserva = Reserva::find($id)->delete();
+
+        return redirect()->route('web.index')
             ->with('success', 'Reserva eliminada');
     }
 }

@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.public_nav')
 
 @section('template_title')
     {{ $reserva->name ?? 'Show Reserva' }}
@@ -14,7 +14,7 @@
                             <span class="card-title">Ver Reserva</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('reservas.index') }}"> Atrás</a>
+                            <a class="btn btn-primary" href="{{ route('web.reservas',auth()->user()->id_usuario) }}"> Atrás</a>
                         </div>
                     </div>
 

@@ -82,7 +82,8 @@
 
             <!-- Section: Form -->
             <section class="">
-                <form action="">
+                <form action="/subscripcion" method="POST">
+                    @csrf
                     <!--Grid row-->
                     <div class="row d-flex justify-content-center">
                         <!--Grid column-->
@@ -97,7 +98,7 @@
                         <div class="col-md-5 col-12">
                             <!-- Email input -->
                             <div class="form-outline form-white mb-4">
-                                <input type="email" id="form5Example21" class="form-control" placeholder="email" />
+                                <input type="email" id="mail" class="form-control" placeholder="email" name="mail" />
                             </div>
                         </div>
                         <!--Grid column-->

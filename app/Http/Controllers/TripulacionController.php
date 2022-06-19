@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Tripulacion;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 /**
  * Class TripulacionController
  * @package App\Http\Controllers
@@ -22,6 +22,15 @@ class TripulacionController extends Controller
 
         return view('tripulacion.index', compact('tripulacion'))
             ->with('i', (request()->input('page', 1) - 1) * $tripulacion->perPage());
+    }
+
+    public function indexTripulante($id)
+
+    {
+        $tripulacion = DB::table("tripulacion")
+        ->select('id_tripulante','id_usuario','id_crucero','funcion')
+        ->where('id_usuario', '=', $id)->get();
+        return view('web.tripulante', compact('tripulacion'));
     }
 
     /**
