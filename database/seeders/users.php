@@ -21,7 +21,8 @@ class users extends Seeder
             "password" => Hash::make("administrador"),
             "dni" => "21574135T",
             "fechaNaci" => "1993/10/26",
-            "numTlf" => 698785245
+            "numTlf" => 698785245,
+            "rol" => 'admin'
         ]);
 
         DB::table("users")->insert([

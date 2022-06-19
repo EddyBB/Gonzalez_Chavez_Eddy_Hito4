@@ -167,7 +167,7 @@
                         </div>
                     </div>
                     <div class="d-flex justify-content-end">
-                        <button type="submit" class="btn btn-primary btn-md mt-4 mb-4">{{ 'Save Changes' }}</button>
+                        <button type="submit" class="btn btn-primary btn-md mt-4 mb-4">{{ 'Guardar' }}</button>
                     </div>
                 </form>
 

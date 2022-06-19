@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 /**
  * Class UserController
@@ -13,7 +15,7 @@ use Illuminate\Support\Facades\Validator;
 class UserController extends Controller
 {
 
-        /**
+    /**
      * Create a new controller instance.
      *
      * @return void
@@ -34,6 +36,16 @@ class UserController extends Controller
 
         return view('user.index', compact('users'))
             ->with('i', (request()->input('page', 1) - 1) * $users->perPage());
+    }
+
+    public function indexDashboard()
+    {
+        $users = DB::table("users")
+            ->select('id_usuario','name','email','dni','fechaNaci','numTlf')
+            ->where('created_at', '>', now()->subDays(30)->endOfDay())->get();
+        
+
+        return view('dashboard', compact('users'));
     }
 
     /**
@@ -123,11 +135,27 @@ class UserController extends Controller
      * @param  User $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, $id)
     {
-        request()->validate(User::$rules);
+        request()->validate(User::$rulesProfile);
 
-        $user->update($request->all());
+        $user = User::find($id);
+
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->dni = $request->dni;
+        $user->fechaNaci = $request->fechaNaci;
+        $user->numTlf = $request->numTlf;
+
+        if (!empty($request->password)) {
+            $user->password = $request->password;
+        }
+
+        if (!empty($request->rol)) {
+            $user->rol = $request->rol;
+        }
+
+        $user->save();
 
         return redirect()->route('users.index')
             ->with('success', 'Usuario editado correctamente');
