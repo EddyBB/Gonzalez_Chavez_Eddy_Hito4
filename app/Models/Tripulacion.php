@@ -23,7 +23,7 @@ class Tripulacion extends Model
 {
     
     static $rules = [
-		'id_tripulante' => 'required',
+
 		'id_usuario' => 'required',
 		'id_crucero' => 'required',
 		'funcion' => 'required',

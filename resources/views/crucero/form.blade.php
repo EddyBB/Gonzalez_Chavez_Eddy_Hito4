@@ -1,11 +1,7 @@
 <div class="box box-info padding-1">
     <div class="box-body">
         
-        <div class="form-group">
-            {{ Form::label('id_crucero') }}
-            {{ Form::text('id_crucero', $crucero->id_crucero, ['class' => 'form-control' . ($errors->has('id_crucero') ? ' is-invalid' : ''), 'placeholder' => 'Id Crucero']) }}
-            {!! $errors->first('id_crucero', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
+
         <div class="form-group">
             {{ Form::label('nombre') }}
             {{ Form::text('nombre', $crucero->nombre, ['class' => 'form-control' . ($errors->has('nombre') ? ' is-invalid' : ''), 'placeholder' => 'Nombre']) }}

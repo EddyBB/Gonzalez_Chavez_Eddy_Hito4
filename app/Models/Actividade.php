@@ -23,7 +23,7 @@ class Actividade extends Model
 {
     
     static $rules = [
-		'id_actividades' => 'required',
+
 		'id_crucero' => 'required',
 		'tematica' => 'required',
 		'horario_actividad' => 'required',

@@ -2,11 +2,6 @@
     <div class="box-body">
         
         <div class="form-group">
-            {{ Form::label('id_tripulante') }}
-            {{ Form::text('id_tripulante', $tripulacion->id_tripulante, ['class' => 'form-control' . ($errors->has('id_tripulante') ? ' is-invalid' : ''), 'placeholder' => 'Id Tripulante']) }}
-            {!! $errors->first('id_tripulante', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
-        <div class="form-group">
             {{ Form::label('id_usuario') }}
             {{ Form::text('id_usuario', $tripulacion->id_usuario, ['class' => 'form-control' . ($errors->has('id_usuario') ? ' is-invalid' : ''), 'placeholder' => 'Id Usuario']) }}
             {!! $errors->first('id_usuario', '<div class="invalid-feedback">:message</div>') !!}

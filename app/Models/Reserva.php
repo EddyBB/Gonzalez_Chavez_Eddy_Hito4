@@ -25,7 +25,7 @@ class Reserva extends Model
 {
     
     static $rules = [
-		'id_reserva' => 'required',
+
 		'id_usuario' => 'required',
 		'id_crucero' => 'required',
 		'fecha_reserva' => 'required',

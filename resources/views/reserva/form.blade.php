@@ -2,11 +2,6 @@
     <div class="box-body">
         
         <div class="form-group">
-            {{ Form::label('id_reserva') }}
-            {{ Form::text('id_reserva', $reserva->id_reserva, ['class' => 'form-control' . ($errors->has('id_reserva') ? ' is-invalid' : ''), 'placeholder' => 'Id Reserva']) }}
-            {!! $errors->first('id_reserva', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
-        <div class="form-group">
             {{ Form::label('id_usuario') }}
             {{ Form::text('id_usuario', $reserva->id_usuario, ['class' => 'form-control' . ($errors->has('id_usuario') ? ' is-invalid' : ''), 'placeholder' => 'Id Usuario']) }}
             {!! $errors->first('id_usuario', '<div class="invalid-feedback">:message</div>') !!}

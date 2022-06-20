@@ -29,7 +29,6 @@ class Crucero extends Model
 {
     
     static $rules = [
-		'id_crucero' => 'required',
 		'nombre' => 'required',
 		'fecha_inicio' => 'required',
 		'fecha_fin' => 'required',
